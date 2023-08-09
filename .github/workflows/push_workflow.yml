@@ -13,10 +13,10 @@ jobs:
             - name: Install dependencies
               run: npm ci
             - name: Run lint
-              run: eslint --ext .jsx --fix src
+              run: npm eslint --ext .jsx --fix src
             - name: Run test
-              run: vitest run
+              run: npm vitest run
             - name: Run build
-              run: vite build
+              run: npm vite build
             
 
