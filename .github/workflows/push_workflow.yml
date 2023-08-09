@@ -1,7 +1,7 @@
 name: push workflow
 on: push
 jobs: 
-    lint:
+    deploy:
         runs-on: ubuntu-latest
         steps:
             - name: Get code
@@ -13,10 +13,12 @@ jobs:
             - name: Install dependencies
               run: npm ci
             - name: Run lint
-              run: npm eslint --ext .jsx --fix src
+              run: npm run lint
             - name: Run test
-              run: npm vitest run
+              run: npm run test
             - name: Run build
-              run: npm vite build
+              run: npm run build
+            - name: Deployment
+              run: echo "deploying..."
             
 
